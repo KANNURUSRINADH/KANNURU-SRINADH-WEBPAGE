@@ -4,17 +4,20 @@
 function updateDateTime() {
     const now = new Date();
     
-    // Format time (HH:MM:SS AM/PM)
-    let hours = now.getHours();
+    // Format time (HH:MM:SS)
+    const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12;
-    const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+    const timeString = `${hours} : ${minutes} : ${seconds}`;
     
-    // Format date (Day, Month Date, Year)
-    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-    const dateString = now.toLocaleDateString('en-US', options);
+    // Format date (DAY, MONTH DATE, YEAR)
+    const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const dayName = days[now.getDay()];
+    const monthName = months[now.getMonth()];
+    const date = now.getDate();
+    const year = now.getFullYear();
+    const dateString = `${dayName}, ${monthName} ${date}, ${year}`;
     
     // Update DOM
     const timeElement = document.getElementById('navTime');
