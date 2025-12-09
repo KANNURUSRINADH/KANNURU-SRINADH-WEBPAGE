@@ -64,6 +64,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    position: relative;
 }
 
 .nav-logo {
@@ -71,6 +72,29 @@ html {
     font-weight: 700;
     color: white;
     text-decoration: none;
+}
+
+.nav-datetime {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    color: white;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.nav-time {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--gold);
+}
+
+.nav-date {
+    font-weight: 400;
+    font-size: 0.75rem;
+    opacity: 0.9;
 }
 
 .nav-toggle {
@@ -1124,6 +1148,19 @@ footer p:first-child {
     
     .nav-logo {
         font-size: 1.1rem;
+    }
+    
+    .nav-datetime {
+        position: static;
+        transform: none;
+        margin: 0.5rem 0;
+        text-align: center;
+        order: -1;
+        width: 100%;
+    }
+    
+    .nav-content {
+        flex-wrap: wrap;
     }
     
     .nav-menu {

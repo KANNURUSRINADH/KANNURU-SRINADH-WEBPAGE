@@ -1,5 +1,33 @@
 // Two-Column Layout JavaScript
 
+// Live Date and Time in Navigation
+function updateDateTime() {
+    const now = new Date();
+    
+    // Format time (HH:MM:SS AM/PM)
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+    
+    // Format date (Day, Month Date, Year)
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    const dateString = now.toLocaleDateString('en-US', options);
+    
+    // Update DOM
+    const timeElement = document.getElementById('navTime');
+    const dateElement = document.getElementById('navDate');
+    
+    if (timeElement) timeElement.textContent = timeString;
+    if (dateElement) dateElement.textContent = dateString;
+}
+
+// Update immediately and then every second
+updateDateTime();
+setInterval(updateDateTime, 1000);
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
