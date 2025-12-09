@@ -1,0 +1,72 @@
+HOW TO ADD HERO BACKGROUND IMAGE
+=================================
+
+OPTION 1: Use Your Own Background Image
+----------------------------------------
+1. Choose a professional background image:
+   - NIT Rourkela campus photo
+   - Library or laboratory background
+   - Abstract tech/science pattern
+   - Graduation ceremony photo
+
+2. Save it as: hero-background.jpg (or .png)
+
+3. Place it in the images/ folder
+
+4. Recommended specifications:
+   - Size: 1920x1080 pixels (Full HD)
+   - Format: JPG (for photos) or PNG (for graphics)
+   - File size: Under 500KB (compress if needed)
+   - Quality: High resolution but optimized
+
+OPTION 2: Use NIT Rourkela Campus Images
+-----------------------------------------
+You can use:
+- Main gate photo
+- Academic building
+- Library exterior/interior
+- Campus aerial view
+- Convocation hall
+
+OPTION 3: Use Abstract/Pattern Background
+------------------------------------------
+Good choices:
+- Geometric patterns
+- Circuit board design
+- Neural network visualization
+- Data visualization patterns
+- Blue/gold abstract art
+
+TIPS FOR BEST RESULTS:
+----------------------
+✓ Use darker images (text is white)
+✓ Avoid busy/cluttered backgrounds
+✓ Ensure good contrast with text
+✓ Professional and academic theme
+✓ Compress images for faster loading
+
+CURRENT SETUP:
+--------------
+The CSS is already configured to use: images/hero-background.jpg
+
+If no image is found, it will show:
+- Navy blue gradient (current)
+- Subtle animated overlay patterns
+
+ALTERNATIVE FILENAMES:
+----------------------
+If you want to use a different filename, edit styles.css:
+
+Find this line (around line 105):
+url('images/hero-background.jpg')
+
+Change to:
+url('images/YOUR-FILENAME.jpg')
+
+FREE BACKGROUND RESOURCES:
+--------------------------
+- Unsplash.com (free high-quality photos)
+- Pexels.com (free stock photos)
+- Pixabay.com (free images)
+
+Search for: "university campus", "library", "technology", "abstract blue"

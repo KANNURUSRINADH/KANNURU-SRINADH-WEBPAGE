@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Kannuru Srinadh
+N:Kannuru;Srinadh;;;
+TITLE:Doctoral Fellow (PhD) & Researcher
+ORG:National Institute of Technology Rourkela;Electronics and Communication Engineering
+EMAIL;TYPE=INTERNET:srinadh.3914@gmail.com
+TEL;TYPE=CELL:+91-7306106104
+ADR;TYPE=WORK:;;NIT Rourkela;Sundargarh;Odisha;769008;India
+URL:https://orcid.org/0009-0005-3147-2347
+NOTE:Research Focus: Sparse Signal Processing, Model-Based Deep Learning, Multimodal Image Super-Resolution
+END:VCARD
