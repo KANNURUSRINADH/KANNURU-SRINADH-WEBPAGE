@@ -48,6 +48,30 @@
         #pageLoader.hidden {
             display: none !important;
         }
+
+        /* Accordion CSS - Essential for functionality */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-content.active {
+            max-height: none;
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #f5f5f5;
+        }
+
+        .accordion-header.active {
+            background-color: #e3f2fd;
+        }
     </style>
 
     <script>
@@ -61,28 +85,28 @@
                 }
             }, 300); // Reduced to 300ms
         });
-        
+
         // ACCORDION FUNCTIONALITY - Fixed
         function toggleAccordion(header) {
             const content = header.nextElementSibling;
             const isActive = content.classList.contains('active');
-            
+
             // Close all accordions first
             document.querySelectorAll('.accordion-content').forEach(item => {
                 item.classList.remove('active');
                 item.style.maxHeight = '0';
             });
-            
+
             document.querySelectorAll('.accordion-header').forEach(item => {
                 item.classList.remove('active');
             });
-            
+
             // If this wasn't active, open it
             if (!isActive) {
                 content.classList.add('active');
                 header.classList.add('active');
                 content.style.maxHeight = content.scrollHeight + 'px';
-                
+
                 // Set to auto after animation
                 setTimeout(() => {
                     if (content.classList.contains('active')) {
