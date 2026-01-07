@@ -454,60 +454,70 @@ style.textContent = `
     /* Mobile Responsive Adjustments */
     @media (max-width: 1024px) {
         .stats-row {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.8rem;
-            max-width: 800px;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 1.8rem !important;
+            max-width: 800px !important;
+            margin: 2rem auto !important;
+            padding: 0 1rem !important;
         }
         
         .stat-box {
-            min-width: 140px;
-            max-width: 160px;
-            padding: 1rem 0.8rem;
+            min-width: 140px !important;
+            max-width: 160px !important;
+            padding: 1rem 0.8rem !important;
         }
     }
     
     @media (max-width: 768px) {
         .stats-row {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 500px;
-            padding: 0 1rem;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+            max-width: 500px !important;
+            padding: 0 1rem !important;
+            margin: 2rem auto !important;
+            display: grid !important;
         }
         
         .stat-box {
-            min-width: 120px;
-            max-width: 140px;
-            padding: 1rem 0.8rem;
+            min-width: 120px !important;
+            max-width: 140px !important;
+            padding: 1rem 0.8rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
         
         .stat-box h3 {
-            font-size: 2.5rem;
+            font-size: 2.5rem !important;
         }
         
         .stat-box p {
-            font-size: 0.8rem;
+            font-size: 0.8rem !important;
         }
     }
     
     @media (max-width: 480px) {
         .stats-row {
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-            max-width: 300px;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1rem !important;
+            max-width: 100% !important;
+            padding: 0 1rem !important;
+            margin: 2rem auto !important;
         }
         
         .stat-box {
-            min-width: 200px;
-            max-width: 250px;
-            padding: 1.2rem 1rem;
+            min-width: 140px !important;
+            max-width: 180px !important;
+            padding: 1rem 0.8rem !important;
         }
         
         .stat-box h3 {
-            font-size: 2.2rem;
+            font-size: 2rem !important;
         }
         
         .stat-box p {
-            font-size: 0.75rem;
+            font-size: 0.7rem !important;
         }
     }
     
