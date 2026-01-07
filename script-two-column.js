@@ -421,26 +421,68 @@ style.textContent = `
         overflow: hidden;
     }
     
-    /* Fix for stat box text separation while preserving hover effects */
-    .stat-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
+    /* Minimal fix for text separation without breaking hover effects */
     .stat-box h3.counter {
         display: block;
-        margin: 0;
-        padding: 0;
         line-height: 1;
     }
     
     .stat-box p {
         display: block;
-        margin: 0;
-        padding: 0;
         margin-top: 0.5rem;
+    }
+    
+    /* Reduce width and improve spacing for better visual balance */
+    .stats-row {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2.2rem;
+        margin-bottom: 2rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 1.5rem;
+    }
+    
+    .stat-box {
+        padding: 1rem 0.8rem;
+        min-width: 140px;
+        max-width: 160px;
+        margin: 0 auto;
+    }
+    
+    /* Ensure hover effects work properly */
+    .stat-box {
+        transition: all 0.3s ease;
+    }
+    
+    .stat-box:hover {
+        transform: translateY(-10px) scale(1.08);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        border-radius: 30% 8px 30% 8px;
+    }
+    
+    .stat-box:hover h3 {
+        animation: number-spin 0.8s ease;
+    }
+    
+    @keyframes number-spin {
+        0% { 
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        50% { 
+            transform: rotateX(90deg);
+            opacity: 0;
+        }
+        51% { 
+            transform: rotateX(-90deg);
+            opacity: 0;
+        }
+        100% { 
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
     }
 `;
 document.head.appendChild(style);
