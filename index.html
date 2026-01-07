@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +8,45 @@
     <link rel="stylesheet" href="styles-two-column.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
+    <!-- Simple Loading Screen -->
+    <div id="pageLoader"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;">
+            <div
+                style="width: 40px; height: 40px; border: 3px solid #f3f3f3; border-top: 3px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;">
+            </div>
+            <p style="color: #666; font-family: Arial, sans-serif;">Loading...</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #pageLoader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        body {
+            visibility: hidden;
+        }
+
+        body.loaded {
+            visibility: visible;
+        }
+    </style>
+
     <!-- Navigation Menu -->
     <nav class="navbar">
         <div class="container">
@@ -34,17 +73,18 @@
     <div class="profile-container" id="about">
         <div class="container-wide">
             <div class="two-column-layout">
-                
+
                 <!-- LEFT SIDEBAR -->
                 <aside class="sidebar-left">
                     <!-- Profile Photo -->
                     <div class="sidebar-photo-box">
                         <img src="images/KANNURU SRINADH.png" alt="Kannuru Srinadh" class="profile-photo fade-in">
                     </div>
-                    
+
                     <!-- Academic Identity -->
                     <div class="sidebar-box academic-identity">
-                        <a href="https://orcid.org/0009-0005-3147-2347" target="_blank" class="identity-item identity-orcid">
+                        <a href="https://orcid.org/0009-0005-3147-2347" target="_blank"
+                            class="identity-item identity-orcid">
                             <div class="identity-icon">
                                 <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="ORCID">
                             </div>
@@ -52,31 +92,41 @@
                         </a>
                         <a href="https://scholar.google.com" target="_blank" class="identity-item identity-scholar">
                             <div class="identity-icon">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Scholar">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                                    alt="Google Scholar">
                             </div>
                             <h5>Google Scholar</h5>
                         </a>
                         <a href="https://linkedin.com" target="_blank" class="identity-item identity-linkedin">
                             <div class="identity-icon">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                                    alt="LinkedIn">
                             </div>
                             <h5>LinkedIn</h5>
                         </a>
-                        <a href="https://github.com/kannurusrinadh" target="_blank" class="identity-item identity-github">
+                        <a href="https://github.com/kannurusrinadh" target="_blank"
+                            class="identity-item identity-github">
                             <div class="identity-icon">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                    alt="GitHub">
                             </div>
                             <h5>GitHub</h5>
                         </a>
                     </div>
-                    
+
                     <!-- Biography -->
                     <div class="sidebar-box">
                         <h3>BIOGRAPHY</h3>
-                        <p>Kannuru Srinadh is a Doctoral Fellow (PhD) at the National Institute of Technology Rourkela, conducting research in the ISDR & Communication Network Laboratory and Adaptive System Laboratory (ASL). His research focuses on Sparse Enabled Model-based Deep Learning for Multimodal Image Super-Resolution under the supervision of Prof. Upendra Kumar Sahoo and Prof. Santos Kumar Das.</p>
-                        <p>Prior to his doctoral studies, he served as an Assistant Professor at Anurag Engineering College (A), Telangana for over 4 years (2017-2022), where he taught various courses in electronics and communication engineering.</p>
+                        <p>Kannuru Srinadh is a Doctoral Fellow (PhD) at the National Institute of Technology Rourkela,
+                            conducting research in the ISDR & Communication Network Laboratory and Adaptive System
+                            Laboratory (ASL). His research focuses on Sparse Enabled Model-based Deep Learning for
+                            Multimodal Image Super-Resolution under the supervision of Prof. Upendra Kumar Sahoo and
+                            Prof. Santos Kumar Das.</p>
+                        <p>Prior to his doctoral studies, he served as an Assistant Professor at Anurag Engineering
+                            College (A), Telangana for over 4 years (2017-2022), where he taught various courses in
+                            electronics and communication engineering.</p>
                     </div>
-                    
+
                     <!-- Expertise Information -->
                     <div class="sidebar-box">
                         <h3>EXPERTISE INFORMATION</h3>
@@ -97,15 +147,15 @@
                                 <li>Image & Video Enhancement</li>
                                 <li>Object Detection</li>
                                 <li>Biomedical Image Processing</li>
-                                
-                                
-                                
-                               
+
+
+
+
                             </ul>
                         </div>
                     </div>
                 </aside>
-                
+
                 <!-- RIGHT MAIN CONTENT -->
                 <main class="content-right">
                     <!-- Header Section -->
@@ -115,22 +165,22 @@
                             <h2 class="hindi-name">कन्नुरु श्रीनाध</h2>
                             <p class="designation">Doctoral Fellow (PhD) & Researcher</p>
                             <p class="department">Electronics and Communication Engineering</p>
-                            
+
                             <div class="contact-info-header">
                                 <p><i class="fas fa-envelope"></i> srinadh.3914@gmail.com</p>
                                 <p><i class="fas fa-phone"></i> +91-7306106104</p>
                             </div>
-                            
+
                             <a href="documents/Kannuru_Srinadh_CV.pdf" download class="btn-biosketch">
                                 <i class="fas fa-download"></i> Download CV
                             </a>
                         </div>
-                        
+
                         <div class="header-right">
                             <img src="images/qr-code.png" alt="Contact QR Code" class="qr-code-image">
                         </div>
                     </div>
-                    
+
                     <!-- Statistics Row -->
                     <div class="stats-row">
                         <div class="stat-box stat-green">
@@ -158,7 +208,7 @@
                             <p>PROJECTS</p>
                         </div>
                     </div>
-                    
+
                     <!-- Scholar ID Box -->
                     <div class="scholar-box">
                         <div class="scholar-info">
@@ -167,13 +217,14 @@
                         </div>
                         <div class="room-info">
                             <p><i class="fas fa-door-open"></i> Room Number: EC-430</p>
-                            <p><i class="fas fa-building"></i> Department of Electronics and Communication Engineering, National Institute of Technology Rourkela, Sundargarh, Odisha, India - 769008</p>
+                            <p><i class="fas fa-building"></i> Department of Electronics and Communication Engineering,
+                                National Institute of Technology Rourkela, Sundargarh, Odisha, India - 769008</p>
                         </div>
                     </div>
-                    
+
                     <!-- Accordion Sections -->
                     <div class="accordion-container" id="publications">
-                        
+
                         <!-- Education Qualification -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -201,12 +252,16 @@
                                             <div class="edu-details">
                                                 <div class="edu-info-row">
                                                     <div class="edu-logo">
-                                                        <img src="images/NIT_Rourkela_Colour_Logo.svg" alt="NIT Rourkela Logo" onerror="this.style.display='none'">
+                                                        <img src="images/NIT_Rourkela_Colour_Logo.svg"
+                                                            alt="NIT Rourkela Logo" onerror="this.style.display='none'">
                                                     </div>
                                                     <div class="edu-text">
-                                                        <p class="edu-institution">National Institute of Technology Rourkela, Odisha, India</p>
-                                                        <p class="edu-field"><strong>Electronics and Communication Engineering</strong></p>
-                                                        <p class="edu-specialization">Specialization: Signal and Image Processing</p>
+                                                        <p class="edu-institution">National Institute of Technology
+                                                            Rourkela, Odisha, India</p>
+                                                        <p class="edu-field"><strong>Electronics and Communication
+                                                                Engineering</strong></p>
+                                                        <p class="edu-specialization">Specialization: Signal and Image
+                                                            Processing</p>
                                                     </div>
                                                     <div class="edu-grade-section">
                                                         <div class="edu-grade-circle">
@@ -220,16 +275,19 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <p class="edu-thesis"><em>Thesis: Sparse Enabled Model based Deep Learning for Multimodal Image Superresolution</em></p>
-                                                <p class="edu-supervisors"><em>Supervisors: Prof. Upendra Kumar Sahoo & Prof. Santos Kumar Das</em></p>
+                                                <p class="edu-thesis"><em>Thesis: Sparse Enabled Model based Deep
+                                                        Learning for Multimodal Image Superresolution</em></p>
+                                                <p class="edu-supervisors"><em>Supervisors: Prof. Upendra Kumar Sahoo &
+                                                        Prof. Santos Kumar Das</em></p>
                                                 <div class="edu-extra-details">
-                                                    <p><strong>Research Focus:</strong> Sparse Signal Processing, Model-Based Deep Learning</p>
+                                                    <p><strong>Research Focus:</strong> Sparse Signal Processing,
+                                                        Model-Based Deep Learning</p>
                                                     <p><strong>Status:</strong> In Progress (Expected July 2027)</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- M.Tech -->
                                     <div class="edu-item" data-aos="fade-up" data-aos-delay="100">
                                         <div class="edu-timeline-dot">
@@ -249,12 +307,16 @@
                                             <div class="edu-details">
                                                 <div class="edu-info-row">
                                                     <div class="edu-logo">
-                                                        <img src="images/jntuk-logo.png" alt="JNTU Kakinada Logo" onerror="this.style.display='none'">
+                                                        <img src="images/jntuk-logo.png" alt="JNTU Kakinada Logo"
+                                                            onerror="this.style.display='none'">
                                                     </div>
                                                     <div class="edu-text">
-                                                        <p class="edu-institution">Jawaharlal Nehru Technological University Kakinada, Andhra Pradesh, India</p>
-                                                        <p class="edu-field"><strong>Electronics and Communication Engineering</strong></p>
-                                                        <p class="edu-specialization">Specialization: Systems and Signal Processing</p>
+                                                        <p class="edu-institution">Jawaharlal Nehru Technological
+                                                            University Kakinada, Andhra Pradesh, India</p>
+                                                        <p class="edu-field"><strong>Electronics and Communication
+                                                                Engineering</strong></p>
+                                                        <p class="edu-specialization">Specialization: Systems and Signal
+                                                            Processing</p>
                                                     </div>
                                                     <div class="edu-grade-circle">
                                                         <div class="circle-content">
@@ -266,7 +328,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- B.Tech -->
                                     <div class="edu-item" data-aos="fade-up" data-aos-delay="200">
                                         <div class="edu-timeline-dot">
@@ -286,11 +348,14 @@
                                             <div class="edu-details">
                                                 <div class="edu-info-row">
                                                     <div class="edu-logo">
-                                                        <img src="images/jntuk-logo.png" alt="JNTU Kakinada Logo" onerror="this.style.display='none'">
+                                                        <img src="images/jntuk-logo.png" alt="JNTU Kakinada Logo"
+                                                            onerror="this.style.display='none'">
                                                     </div>
                                                     <div class="edu-text">
-                                                        <p class="edu-institution">Jawaharlal Nehru Technological University Kakinada, Andhra Pradesh, India</p>
-                                                        <p class="edu-field"><strong>Electronics and Communication Engineering</strong></p>
+                                                        <p class="edu-institution">Jawaharlal Nehru Technological
+                                                            University Kakinada, Andhra Pradesh, India</p>
+                                                        <p class="edu-field"><strong>Electronics and Communication
+                                                                Engineering</strong></p>
                                                     </div>
                                                     <div class="edu-grade-circle">
                                                         <div class="circle-content">
@@ -302,7 +367,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Intermediate -->
                                     <div class="edu-item" data-aos="fade-up" data-aos-delay="300">
                                         <div class="edu-timeline-dot">
@@ -322,10 +387,12 @@
                                             <div class="edu-details">
                                                 <div class="edu-info-row">
                                                     <div class="edu-logo">
-                                                        <img src="images/ap-inter.png" alt="AP Intermediate Logo" onerror="this.style.display='none'">
+                                                        <img src="images/ap-inter.png" alt="AP Intermediate Logo"
+                                                            onerror="this.style.display='none'">
                                                     </div>
                                                     <div class="edu-text">
-                                                        <p class="edu-institution">Margadarsi Junior College, Gajuwaka, Visakhapatnam, Andhra Pradesh, India</p>
+                                                        <p class="edu-institution">Margadarsi Junior College, Gajuwaka,
+                                                            Visakhapatnam, Andhra Pradesh, India</p>
                                                     </div>
                                                     <div class="edu-grade-circle">
                                                         <div class="circle-content">
@@ -337,7 +404,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Class X -->
                                     <div class="edu-item" data-aos="fade-up" data-aos-delay="400">
                                         <div class="edu-timeline-dot">
@@ -357,10 +424,12 @@
                                             <div class="edu-details">
                                                 <div class="edu-info-row">
                                                     <div class="edu-logo">
-                                                        <img src="images/ssc.png" alt="SSC Logo" onerror="this.style.display='none'">
+                                                        <img src="images/ssc.png" alt="SSC Logo"
+                                                            onerror="this.style.display='none'">
                                                     </div>
                                                     <div class="edu-text">
-                                                        <p class="edu-institution">Z.P.H School, Vada cheepurupalli, Visakhapatnam, Andhra Pradesh, India</p>
+                                                        <p class="edu-institution">Z.P.H School, Vada cheepurupalli,
+                                                            Visakhapatnam, Andhra Pradesh, India</p>
                                                     </div>
                                                     <div class="edu-grade-circle">
                                                         <div class="circle-content">
@@ -375,7 +444,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Research Interests -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -396,7 +465,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <!-- Experience -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -406,30 +475,40 @@
                             <div class="accordion-content">
                                 <h4>Research Experience</h4>
                                 <ul class="content-list">
-                                    <li><strong>Doctoral Fellow (PhD)</strong> - National Institute of Technology Rourkela (July 2022 - Present)<br>
-                                    <em>Supervisor: Prof. Upendra Kumar Sahoo & Prof. Santos Kumar Das</em><br>
-                                    • Conducting research on Sparse Enabled Model based Deep Learning for Multimodal Image Superresolution<br>
-                                    • Developed novel cryptographic protocols for secure data aggregation in decentralized IoT networks<br>
-                                    • Designed blockchain-enabled framework for verifiable data sharing in cloud computing environments<br>
-                                    • Utilized machine learning techniques to predict and mitigate security vulnerabilities in wireless communication protocols</li>
+                                    <li><strong>Doctoral Fellow (PhD)</strong> - National Institute of Technology
+                                        Rourkela (July 2022 - Present)<br>
+                                        <em>Supervisor: Prof. Upendra Kumar Sahoo & Prof. Santos Kumar Das</em><br>
+                                        • Conducting research on Sparse Enabled Model based Deep Learning for Multimodal
+                                        Image Superresolution<br>
+                                        • Developed novel cryptographic protocols for secure data aggregation in
+                                        decentralized IoT networks<br>
+                                        • Designed blockchain-enabled framework for verifiable data sharing in cloud
+                                        computing environments<br>
+                                        • Utilized machine learning techniques to predict and mitigate security
+                                        vulnerabilities in wireless communication protocols
+                                    </li>
                                 </ul>
-                                
+
                                 <h4>Teaching Experience</h4>
                                 <ul class="content-list">
-                                    <li><strong>Teaching Assistant</strong> - National Institute of Technology Rourkela (July 2022 - Present)<br>
-                                    <em>Course: Advanced Wireless Communications</em><br>
-                                    • Conducted weekly tutorial sessions for 40+ undergraduate students on MIMO, OFDM, and channel coding<br>
-                                    • Assisted in developing lab exercises and grading assignments<br>
-                                    • Provided one-on-one mentorship to students</li>
-                                    
-                                    <li><strong>Assistant Professor</strong> - Anurag Engineering College (A), Telangana (Sep 2017 - July 2022) - 4.10 years<br>
-                                    • Taught multiple courses in Electronics and Communication Engineering<br>
-                                    • Conducted practical laboratory sessions<br>
-                                    • Mentored undergraduate students in their projects</li>
+                                    <li><strong>Teaching Assistant</strong> - National Institute of Technology Rourkela
+                                        (July 2022 - Present)<br>
+                                        <em>Course: Advanced Wireless Communications</em><br>
+                                        • Conducted weekly tutorial sessions for 40+ undergraduate students on MIMO,
+                                        OFDM, and channel coding<br>
+                                        • Assisted in developing lab exercises and grading assignments<br>
+                                        • Provided one-on-one mentorship to students
+                                    </li>
+
+                                    <li><strong>Assistant Professor</strong> - Anurag Engineering College (A), Telangana
+                                        (Sep 2017 - July 2022) - 4.10 years<br>
+                                        • Taught multiple courses in Electronics and Communication Engineering<br>
+                                        • Conducted practical laboratory sessions<br>
+                                        • Mentored undergraduate students in their projects</li>
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <!-- Publications -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -440,34 +519,55 @@
                                 <div class="total-publications">
                                     <strong>Total Publications: 4</strong>
                                 </div>
-                                
+
                                 <h4 class="publication-section-title">Peer-Reviewed Journal Articles</h4>
                                 <div class="publication-item publication-journal">
-                                    <p class="pub-content">G. K. Sahoo, S. K. Das, U. C. Pati, K L. S. Tudu, R. Nayak, and P. Singh, "An internet of things-edge paradigm-enabled vision-based driving assistance for blind corners: a V2I application", <em>International Journal of Computational Vision and Robotics</em>, Inderscience, January 2024, <a href="http://dx.doi.org/10.1504/IJCVR.2024.10063672" target="_blank" class="doi-link">http://dx.doi.org/10.1504/IJCVR.2024.10063672</a></p>
+                                    <p class="pub-content">G. K. Sahoo, S. K. Das, U. C. Pati, K L. S. Tudu, R. Nayak,
+                                        and P. Singh, "An internet of things-edge paradigm-enabled vision-based driving
+                                        assistance for blind corners: a V2I application", <em>International Journal of
+                                            Computational Vision and Robotics</em>, Inderscience, January 2024, <a
+                                            href="http://dx.doi.org/10.1504/IJCVR.2024.10063672" target="_blank"
+                                            class="doi-link">http://dx.doi.org/10.1504/IJCVR.2024.10063672</a></p>
                                     <span class="badge badge-blue">Article</span>
                                 </div>
-                                
+
                                 <h4 class="publication-section-title">Peer-Reviewed Conference Papers</h4>
                                 <div class="publication-item publication-conference">
-                                    <p class="pub-content">K. Srinadh, K. Ramakrishna, V. David and G. Lakshmi, "Dual Multiplicative Intrinsic Components Optimization for Enhanced MRI Bias Field Correction", in <em>2025 6th International Conference on Recent Advances in Information Technology (RAIT)</em>, Dhanbad, India, IEEE 2025, pp. 1-6, <a href="https://doi.org/10.1109/RAIT65068.2025.11089089" target="_blank" class="doi-link">10.1109/RAIT65068.2025.11089089</a></p>
+                                    <p class="pub-content">K. Srinadh, K. Ramakrishna, V. David and G. Lakshmi, "Dual
+                                        Multiplicative Intrinsic Components Optimization for Enhanced MRI Bias Field
+                                        Correction", in <em>2025 6th International Conference on Recent Advances in
+                                            Information Technology (RAIT)</em>, Dhanbad, India, IEEE 2025, pp. 1-6, <a
+                                            href="https://doi.org/10.1109/RAIT65068.2025.11089089" target="_blank"
+                                            class="doi-link">10.1109/RAIT65068.2025.11089089</a></p>
                                     <span class="badge badge-blue">Inproceedings</span>
                                 </div>
-                                
+
                                 <div class="publication-item publication-conference">
-                                    <p class="pub-content">S. Rana, K. Srinadh, K. Bhagyasekhar, V. K. Kappala and S. K. Das, "Performance Analysis of FSO Communication Under Foggy Conditions", in <em>2025 4th International Conference on Range Technology (ICORT)</em>, Chandipur, Balasore, India, IEEE 2025, pp. 1-6, <a href="https://doi.org/10.1109/ICORT64008.2025.11115410" target="_blank" class="doi-link">10.1109/ICORT64008.2025.11115410</a></p>
+                                    <p class="pub-content">S. Rana, K. Srinadh, K. Bhagyasekhar, V. K. Kappala and S. K.
+                                        Das, "Performance Analysis of FSO Communication Under Foggy Conditions", in
+                                        <em>2025 4th International Conference on Range Technology (ICORT)</em>,
+                                        Chandipur, Balasore, India, IEEE 2025, pp. 1-6, <a
+                                            href="https://doi.org/10.1109/ICORT64008.2025.11115410" target="_blank"
+                                            class="doi-link">10.1109/ICORT64008.2025.11115410</a>
+                                    </p>
                                     <span class="badge badge-green">🏆 Best Paper Award</span>
                                     <span class="badge badge-blue">Inproceedings</span>
                                 </div>
-                                
+
                                 <div class="publication-item publication-conference">
-                                    <p class="pub-content">K. Srinadh, V. David, G. Lakshmi and K. Ramakrishna, "Unified Dictionary Training Approach for High-Resolution Image Enhancement", in <em>2024 4th International Conference on Artificial Intelligence and Signal Processing (AISP)</em>, VIJAYAWADA, India, IEEE 2024, pp. 01-05, <a href="https://doi.org/10.1109/AISP61711.2024.10870610" target="_blank" class="doi-link">10.1109/AISP61711.2024.10870610</a></p>
+                                    <p class="pub-content">K. Srinadh, V. David, G. Lakshmi and K. Ramakrishna, "Unified
+                                        Dictionary Training Approach for High-Resolution Image Enhancement", in <em>2024
+                                            4th International Conference on Artificial Intelligence and Signal
+                                            Processing (AISP)</em>, VIJAYAWADA, India, IEEE 2024, pp. 01-05, <a
+                                            href="https://doi.org/10.1109/AISP61711.2024.10870610" target="_blank"
+                                            class="doi-link">10.1109/AISP61711.2024.10870610</a></p>
                                     <span class="badge badge-blue">Inproceedings</span>
                                 </div>
-                                
-                                
+
+
                             </div>
                         </div>
-                        
+
                         <!-- Technical Skills -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -478,60 +578,75 @@
                                 <div class="skills-icon-row">
                                     <!-- Programming Languages -->
                                     <div class="skill-icon-item skill-python" data-skill="Python">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                            alt="Python">
                                     </div>
                                     <div class="skill-icon-item skill-cpp" data-skill="C/C++">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                            alt="C++">
                                     </div>
                                     <div class="skill-icon-item skill-javascript" data-skill="JavaScript">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                            alt="JavaScript">
                                     </div>
-                                    
+
                                     <!-- Web Technologies -->
                                     <div class="skill-icon-item skill-html" data-skill="HTML5">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                            alt="HTML5">
                                     </div>
                                     <div class="skill-icon-item skill-css" data-skill="CSS3">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                            alt="CSS3">
                                     </div>
                                     <div class="skill-icon-item skill-react" data-skill="React">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                            alt="React">
                                     </div>
                                     <div class="skill-icon-item skill-nodejs" data-skill="Node.js">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                            alt="Node.js">
                                     </div>
-                                    
+
                                     <!-- ML/AI Frameworks -->
                                     <div class="skill-icon-item skill-tensorflow" data-skill="TensorFlow">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                                            alt="TensorFlow">
                                     </div>
                                     <div class="skill-icon-item skill-pytorch" data-skill="PyTorch">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                                            alt="PyTorch">
                                     </div>
                                     <div class="skill-icon-item skill-numpy" data-skill="NumPy">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                                            alt="NumPy">
                                     </div>
-                                    
+
                                     <!-- Tools & Others -->
                                     <div class="skill-icon-item skill-matlab" data-skill="MATLAB">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg"
+                                            alt="MATLAB">
                                     </div>
                                     <div class="skill-icon-item skill-git" data-skill="Git">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                            alt="Git">
                                     </div>
                                     <div class="skill-icon-item skill-docker" data-skill="Docker">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                            alt="Docker">
                                     </div>
                                     <div class="skill-icon-item skill-mysql" data-skill="MySQL">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                            alt="MySQL">
                                     </div>
                                     <div class="skill-icon-item skill-mongodb" data-skill="MongoDB">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                            alt="MongoDB">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Courses Taught -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -555,7 +670,7 @@
                                             <li>Advanced Digital Signal Processing</li>
                                         </ul>
                                     </div>
-                                    
+
                                     <div class="course-column">
                                         <h4>Practical/Laboratory Courses</h4>
                                         <ul class="content-list">
@@ -572,7 +687,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Certifications -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -581,29 +696,37 @@
                             </div>
                             <div class="accordion-content">
                                 <ul class="content-list">
-                                    <li><strong>Exploring Deep Learning Applications and Practical Implementations</strong> - NIT Rourkela (June 11–15, 2024)<br>
-                                    Certificate ID: NITR/CS/2024/M/0892/0126</li>
-                                    
-                                    <li><strong>Recent Trends in Computer Vision</strong> - NIT Rourkela (December 11–15, 2023)<br>
-                                    Certificate ID: NITR/CS/2024/M/0149/012</li>
-                                    
-                                    <li><strong>Modelling, Simulation & Fabrication of Advanced Electronic Devices</strong> - VIT Chennai (April 15–19, 2023)</li>
-                                    
-                                    <li><strong>New Algorithms for Signal Processing Hands-On</strong> - NIT Warangal & LBRCE (April 20–27, 2018)<br>
-                                    Sponsored by MeitY, Government of India</li>
-                                    
-                                    <li><strong>Innovation in Control and Learning for Dynamical Systems (ICLDS-2024)</strong> - NIT Rourkela (Nov 29 – Dec 03, 2024)</li>
-                                    
-                                    <li><strong>AI for Digital Healthcare Innovations (AIDHI-2024)</strong> - NIT Rourkela (October 15–19, 2024)<br>
-                                    Certificate ID: CT/24/CS/049/031</li>
-                                    
-                                    <li><strong>Shodh Shala on Research Methodology and Data Analysis</strong> - NIT Rourkela (March 1–5, 2023)</li>
-                                    
-                                    <li><strong>Data Science for All with R</strong> - NIT Warangal (Feb 22–26, 2023)</li>
+                                    <li><strong>Exploring Deep Learning Applications and Practical
+                                            Implementations</strong> - NIT Rourkela (June 11–15, 2024)<br>
+                                        Certificate ID: NITR/CS/2024/M/0892/0126</li>
+
+                                    <li><strong>Recent Trends in Computer Vision</strong> - NIT Rourkela (December
+                                        11–15, 2023)<br>
+                                        Certificate ID: NITR/CS/2024/M/0149/012</li>
+
+                                    <li><strong>Modelling, Simulation & Fabrication of Advanced Electronic
+                                            Devices</strong> - VIT Chennai (April 15–19, 2023)</li>
+
+                                    <li><strong>New Algorithms for Signal Processing Hands-On</strong> - NIT Warangal &
+                                        LBRCE (April 20–27, 2018)<br>
+                                        Sponsored by MeitY, Government of India</li>
+
+                                    <li><strong>Innovation in Control and Learning for Dynamical Systems
+                                            (ICLDS-2024)</strong> - NIT Rourkela (Nov 29 – Dec 03, 2024)</li>
+
+                                    <li><strong>AI for Digital Healthcare Innovations (AIDHI-2024)</strong> - NIT
+                                        Rourkela (October 15–19, 2024)<br>
+                                        Certificate ID: CT/24/CS/049/031</li>
+
+                                    <li><strong>Shodh Shala on Research Methodology and Data Analysis</strong> - NIT
+                                        Rourkela (March 1–5, 2023)</li>
+
+                                    <li><strong>Data Science for All with R</strong> - NIT Warangal (Feb 22–26, 2023)
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <!-- Awards -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -613,29 +736,38 @@
                             <div class="accordion-content">
                                 <h4>Awards</h4>
                                 <ul class="content-list">
-                                    <li><strong>🏆 Best Paper Award</strong> - International Conference on Range Technology (ICORT '25) for the paper "Performance Analysis of FSO Communication under Foggy Conditions" (2025)<br>
-                                    <em>Conducted by Integrated Test Range (ITR) DRDO, Ministry of Defence, Government of India, Chandipur</em></li>
-                                    
-                                    <li><strong>NIT Rourkela Research Fellowship</strong> - Awarded for outstanding academic performance and research potential during PhD studies (2022-Present)</li>
+                                    <li><strong>🏆 Best Paper Award</strong> - International Conference on Range
+                                        Technology (ICORT '25) for the paper "Performance Analysis of FSO Communication
+                                        under Foggy Conditions" (2025)<br>
+                                        <em>Conducted by Integrated Test Range (ITR) DRDO, Ministry of Defence,
+                                            Government of India, Chandipur</em>
+                                    </li>
+
+                                    <li><strong>NIT Rourkela Research Fellowship</strong> - Awarded for outstanding
+                                        academic performance and research potential during PhD studies (2022-Present)
+                                    </li>
                                 </ul>
-                                
+
                                 <h4>Professional Service & Affiliations</h4>
                                 <ul class="content-list">
-                                    <li><strong>Reviewer</strong> - IEEE International Conference on Acoustics, Speech, and Signal Processing (2025-Present)</li>
+                                    <li><strong>Reviewer</strong> - IEEE International Conference on Acoustics, Speech,
+                                        and Signal Processing (2025-Present)</li>
                                     <li><strong>Reviewer</strong> - Elsevier Ad Hoc Networks (2023-Present)</li>
-                                    <li><strong>Organizing Committee Member</strong> - National Conference on Advanced Computing and Communication (NCACC'23), NIT Rourkela (2023)</li>
+                                    <li><strong>Organizing Committee Member</strong> - National Conference on Advanced
+                                        Computing and Communication (NCACC'23), NIT Rourkela (2023)</li>
                                     <li><strong>Member</strong> - IEEE Council on RFID and IEEE Sensor Council</li>
                                     <li><strong>Student Member</strong> - Association for Computing Machinery (ACM)</li>
                                 </ul>
-                                
+
                                 <h4>Workshop Coordination</h4>
                                 <ul class="content-list">
-                                    <li><strong>Tech. Workshop Coordinator</strong> - "Python for Beginners" Workshop, NIT Rourkela (April 2025)<br>
-                                    Organized and taught a 2-day hands-on lab for 50+ students</li>
+                                    <li><strong>Tech. Workshop Coordinator</strong> - "Python for Beginners" Workshop,
+                                        NIT Rourkela (April 2025)<br>
+                                        Organized and taught a 2-day hands-on lab for 50+ students</li>
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <!-- Projects -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -644,24 +776,32 @@
                             </div>
                             <div class="accordion-content">
                                 <ul class="content-list">
-                                    <li><strong>Multimodal Image Super-Resolution using Deep Learning</strong> (2023-Present)<br>
-                                    Developing novel sparse-enabled model-based deep learning approaches for enhancing image resolution using multiple modalities. Implemented using Python, TensorFlow, and PyTorch.</li>
-                                    
+                                    <li><strong>Multimodal Image Super-Resolution using Deep Learning</strong>
+                                        (2023-Present)<br>
+                                        Developing novel sparse-enabled model-based deep learning approaches for
+                                        enhancing image resolution using multiple modalities. Implemented using Python,
+                                        TensorFlow, and PyTorch.</li>
+
                                     <li><strong>IoT-based Smart Monitoring System</strong> (2022-2023)<br>
-                                    Designed and implemented an IoT-enabled monitoring system for real-time data collection and analysis. Technologies: Arduino, Raspberry Pi, MQTT, Node.js.</li>
-                                    
+                                        Designed and implemented an IoT-enabled monitoring system for real-time data
+                                        collection and analysis. Technologies: Arduino, Raspberry Pi, MQTT, Node.js.
+                                    </li>
+
                                     <li><strong>Signal Processing for Wireless Communications</strong> (2021-2022)<br>
-                                    Developed adaptive signal processing algorithms for improving wireless communication performance. Implemented in MATLAB and C++.</li>
-                                    
+                                        Developed adaptive signal processing algorithms for improving wireless
+                                        communication performance. Implemented in MATLAB and C++.</li>
+
                                     <li><strong>Machine Learning for Network Optimization</strong> (2020-2021)<br>
-                                    Applied machine learning techniques to optimize network resource allocation and improve QoS. Technologies: Python, scikit-learn, NumPy.</li>
-                                    
+                                        Applied machine learning techniques to optimize network resource allocation and
+                                        improve QoS. Technologies: Python, scikit-learn, NumPy.</li>
+
                                     <li><strong>Computer Vision for Object Detection</strong> (2019-2020)<br>
-                                    Implemented deep learning models for real-time object detection and classification. Used CNN architectures with TensorFlow and OpenCV.</li>
+                                        Implemented deep learning models for real-time object detection and
+                                        classification. Used CNN architectures with TensorFlow and OpenCV.</li>
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <!-- References -->
                         <div class="accordion-item">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -674,11 +814,13 @@
                                         <h4>Prof. Upendra Kumar Sahoo</h4>
                                         <div class="ref-detail">
                                             <span class="ref-label">Position:</span>
-                                            <span class="ref-value">Professor, Department of Electronics and Communication Engineering</span>
+                                            <span class="ref-value">Professor, Department of Electronics and
+                                                Communication Engineering</span>
                                         </div>
                                         <div class="ref-detail">
                                             <span class="ref-label">Institution:</span>
-                                            <span class="ref-value">National Institute of Technology, Rourkela, India</span>
+                                            <span class="ref-value">National Institute of Technology, Rourkela,
+                                                India</span>
                                         </div>
                                         <div class="ref-detail">
                                             <span class="ref-label">Email:</span>
@@ -693,16 +835,18 @@
                                             <span class="ref-value">PhD Supervisor</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="reference-item">
                                         <h4>Prof. Santos Kumar Das</h4>
                                         <div class="ref-detail">
                                             <span class="ref-label">Position:</span>
-                                            <span class="ref-value">Professor, Department of Electronics and Communication Engineering</span>
+                                            <span class="ref-value">Professor, Department of Electronics and
+                                                Communication Engineering</span>
                                         </div>
                                         <div class="ref-detail">
                                             <span class="ref-label">Institution:</span>
-                                            <span class="ref-value">National Institute of Technology, Rourkela, India</span>
+                                            <span class="ref-value">National Institute of Technology, Rourkela,
+                                                India</span>
                                         </div>
                                         <div class="ref-detail">
                                             <span class="ref-label">Email:</span>
@@ -720,7 +864,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Contact -->
                         <div class="accordion-item" id="contact">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
@@ -747,10 +891,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </main>
-                
+
             </div>
         </div>
     </div>
@@ -775,4 +919,5 @@
 
     <script src="script-two-column.js"></script>
 </body>
+
 </html>

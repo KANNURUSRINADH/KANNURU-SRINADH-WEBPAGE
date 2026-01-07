@@ -78,11 +78,11 @@ function toggleAccordion(header) {
     }
 }
 
-// Counter animation for stats
+// Counter animation for stats - Optimized
 function animateCounter(element) {
     const target = parseFloat(element.getAttribute('data-target'));
     const isDecimal = target % 1 !== 0;
-    const duration = 2000;
+    const duration = 800; // Reduced from 2000ms to 800ms
     const increment = target / (duration / 16);
     let current = 0;
     
@@ -97,28 +97,31 @@ function animateCounter(element) {
     }, 16);
 }
 
-// Animate counters when they come into view
+// Animate counters when they come into view - Optimized
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
+            // Reduced delay for faster animation
             setTimeout(() => {
                 const counter = entry.target.querySelector('.counter');
                 if (counter) {
                     animateCounter(counter);
                 }
                 statsObserver.unobserve(entry.target);
-            }, index * 150);
+            }, index * 50); // Reduced from 150ms to 50ms
         }
     });
 }, { threshold: 0.3 });
 
-// Initialize counters
-document.querySelectorAll('.counter').forEach(counter => {
-    counter.textContent = '0';
-});
-
-document.querySelectorAll('.stat-box').forEach(card => {
-    statsObserver.observe(card);
+// Initialize counters - Defer until DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.counter').forEach(counter => {
+        counter.textContent = counter.getAttribute('data-target');
+    });
+    
+    document.querySelectorAll('.stat-box').forEach(card => {
+        statsObserver.observe(card);
+    });
 });
 
 // Contact Form Handling
@@ -183,22 +186,26 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Fade in elements on scroll
-const fadeElements = document.querySelectorAll('.accordion-item, .stat-box');
-const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, { threshold: 0.1 });
+// Fade in elements on scroll - Deferred loading
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const fadeElements = document.querySelectorAll('.accordion-item, .stat-box');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
 
-fadeElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeObserver.observe(el);
+        fadeElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            fadeObserver.observe(el);
+        });
+    }, 100); // Delay initialization by 100ms
 });
 
 
@@ -206,13 +213,17 @@ fadeElements.forEach(el => {
 // ENHANCEMENTS - Interactive Features
 // ========================================
 
-// 1. Page Loader
-window.addEventListener('load', () => {
+// 1. Page Loader - Fast Loading
+document.addEventListener('DOMContentLoaded', () => {
+    // Show content immediately when DOM is ready
+    document.body.classList.add('loaded');
+    
+    // Hide loader after a short delay
     const loader = document.getElementById('pageLoader');
     if (loader) {
         setTimeout(() => {
             loader.classList.add('hidden');
-        }, 500);
+        }, 300);
     }
 });
 
