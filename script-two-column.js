@@ -445,10 +445,70 @@ style.textContent = `
     }
     
     .stat-box {
-        padding: 1rem 0.8rem;
-        min-width: 140px;
-        max-width: 160px;
+        padding: 1.2rem 1rem;
+        min-width: 160px;
+        max-width: 180px;
         margin: 0 auto;
+    }
+    
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 1024px) {
+        .stats-row {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            max-width: 800px;
+        }
+        
+        .stat-box {
+            min-width: 140px;
+            max-width: 160px;
+            padding: 1rem 0.8rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .stats-row {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 500px;
+            padding: 0 1rem;
+        }
+        
+        .stat-box {
+            min-width: 120px;
+            max-width: 140px;
+            padding: 1rem 0.8rem;
+        }
+        
+        .stat-box h3 {
+            font-size: 2.5rem;
+        }
+        
+        .stat-box p {
+            font-size: 0.8rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .stats-row {
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            max-width: 300px;
+        }
+        
+        .stat-box {
+            min-width: 200px;
+            max-width: 250px;
+            padding: 1.2rem 1rem;
+        }
+        
+        .stat-box h3 {
+            font-size: 2.2rem;
+        }
+        
+        .stat-box p {
+            font-size: 0.75rem;
+        }
     }
     
     /* Ensure hover effects work properly */
