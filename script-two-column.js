@@ -31,42 +31,38 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
-// Counter Animation
+// Counter Animation - Simple and direct approach
 function animateCounters() {
     const counters = document.querySelectorAll('.counter');
     
     counters.forEach(counter => {
         const target = parseFloat(counter.getAttribute('data-target'));
-        const increment = target / 100; // Adjust speed by changing divisor
         let current = 0;
+        const increment = target / 50; // Animation speed
         
-        // Ensure we're only working with the h3 element's direct text content
-        counter.innerHTML = '0';
+        // Clear any existing content and set to 0
+        counter.textContent = '0';
         
-        const updateCounter = () => {
-            if (current < target) {
-                current += increment;
-                if (current > target) current = target;
-                
-                // Handle decimal numbers (like CGPA)
+        const timer = setInterval(() => {
+            current += increment;
+            
+            if (current >= target) {
+                // Final value
                 if (target % 1 !== 0) {
-                    counter.innerHTML = current.toFixed(2);
+                    counter.textContent = target.toFixed(2);
                 } else {
-                    counter.innerHTML = Math.floor(current);
+                    counter.textContent = target.toString();
                 }
-                
-                requestAnimationFrame(updateCounter);
+                clearInterval(timer);
             } else {
-                // Ensure final value is exact
+                // Intermediate values
                 if (target % 1 !== 0) {
-                    counter.innerHTML = target.toFixed(2);
+                    counter.textContent = current.toFixed(2);
                 } else {
-                    counter.innerHTML = target;
+                    counter.textContent = Math.floor(current).toString();
                 }
             }
-        };
-        
-        updateCounter();
+        }, 20); // Update every 20ms
     });
 }
 
@@ -401,7 +397,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// 14. Add CSS for Ripple Effect
+// 14. Add CSS for Ripple Effect and Stat Box Fix
 const style = document.createElement('style');
 style.textContent = `
     .ripple {
@@ -423,6 +419,28 @@ style.textContent = `
     .btn-biosketch, .back-to-top {
         position: relative;
         overflow: hidden;
+    }
+    
+    /* Fix for stat box text separation */
+    .stat-box {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .stat-box h3 {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+    }
+    
+    .stat-box p {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0.5rem !important;
     }
 `;
 document.head.appendChild(style);
