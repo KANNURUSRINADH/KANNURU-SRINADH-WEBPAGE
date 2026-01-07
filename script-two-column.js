@@ -31,6 +31,60 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
+// Counter Animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const increment = target / 100; // Adjust speed by changing divisor
+        let current = 0;
+        
+        // Ensure we're only working with the h3 element's direct text content
+        counter.innerHTML = '0';
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                if (current > target) current = target;
+                
+                // Handle decimal numbers (like CGPA)
+                if (target % 1 !== 0) {
+                    counter.innerHTML = current.toFixed(2);
+                } else {
+                    counter.innerHTML = Math.floor(current);
+                }
+                
+                requestAnimationFrame(updateCounter);
+            } else {
+                // Ensure final value is exact
+                if (target % 1 !== 0) {
+                    counter.innerHTML = target.toFixed(2);
+                } else {
+                    counter.innerHTML = target;
+                }
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Trigger counter animation when stats section comes into view
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsRow = document.querySelector('.stats-row');
+if (statsRow) {
+    statsObserver.observe(statsRow);
+}
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
@@ -56,9 +110,32 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Accordion functionality is now handled in HTML - removed duplicate
-
-// Duplicate removed - function is already defined above
+// Accordion Toggle Function
+function toggleAccordion(header) {
+    const accordionItem = header.parentElement;
+    const content = accordionItem.querySelector('.accordion-content');
+    const isActive = accordionItem.classList.contains('active');
+    
+    // Close all other accordion items
+    document.querySelectorAll('.accordion-item').forEach(item => {
+        if (item !== accordionItem) {
+            item.classList.remove('active');
+            const otherContent = item.querySelector('.accordion-content');
+            if (otherContent) {
+                otherContent.style.maxHeight = '0';
+            }
+        }
+    });
+    
+    // Toggle current accordion item
+    if (isActive) {
+        accordionItem.classList.remove('active');
+        content.style.maxHeight = '0';
+    } else {
+        accordionItem.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+    }
+}
 
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
