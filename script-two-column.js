@@ -56,73 +56,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Accordion functionality - Independent toggle (no auto-close)
-function toggleAccordion(header) {
-    const content = header.nextElementSibling;
-    
-    // Simply toggle current accordion without closing others
-    content.classList.toggle('active');
-    header.classList.toggle('active');
-    
-    // Smooth height animation
-    if (content.classList.contains('active')) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        setTimeout(() => {
-            content.style.maxHeight = '5000px';
-        }, 400);
-    } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        setTimeout(() => {
-            content.style.maxHeight = '0';
-        }, 10);
-    }
-}
+// Accordion functionality is now handled in HTML - removed duplicate
 
-// Counter animation for stats - Optimized
-function animateCounter(element) {
-    const target = parseFloat(element.getAttribute('data-target'));
-    const isDecimal = target % 1 !== 0;
-    const duration = 800; // Reduced from 2000ms to 800ms
-    const increment = target / (duration / 16);
-    let current = 0;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = isDecimal ? target.toFixed(2) : target;
-            clearInterval(timer);
-        } else {
-            element.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
-        }
-    }, 16);
-}
-
-// Animate counters when they come into view - Optimized
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            // Reduced delay for faster animation
-            setTimeout(() => {
-                const counter = entry.target.querySelector('.counter');
-                if (counter) {
-                    animateCounter(counter);
-                }
-                statsObserver.unobserve(entry.target);
-            }, index * 50); // Reduced from 150ms to 50ms
-        }
-    });
-}, { threshold: 0.3 });
-
-// Initialize counters - Defer until DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.counter').forEach(counter => {
-        counter.textContent = counter.getAttribute('data-target');
-    });
-    
-    document.querySelectorAll('.stat-box').forEach(card => {
-        statsObserver.observe(card);
-    });
-});
+// Duplicate removed - function is already defined above
 
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
@@ -186,46 +122,9 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Fade in elements on scroll - Deferred loading
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        const fadeElements = document.querySelectorAll('.accordion-item, .stat-box');
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        fadeElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            fadeObserver.observe(el);
-        });
-    }, 100); // Delay initialization by 100ms
-});
-
-
 // ========================================
 // ENHANCEMENTS - Interactive Features
 // ========================================
-
-// 1. Page Loader - Fast Loading
-document.addEventListener('DOMContentLoaded', () => {
-    // Show content immediately when DOM is ready
-    document.body.classList.add('loaded');
-    
-    // Hide loader after a short delay
-    const loader = document.getElementById('pageLoader');
-    if (loader) {
-        setTimeout(() => {
-            loader.classList.add('hidden');
-        }, 300);
-    }
-});
 
 // 2. Back to Top Button
 const backToTopBtn = document.getElementById('backToTop');
