@@ -421,26 +421,26 @@ style.textContent = `
         overflow: hidden;
     }
     
-    /* Fix for stat box text separation */
+    /* Fix for stat box text separation while preserving hover effects */
     .stat-box {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
-    .stat-box h3 {
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        line-height: 1 !important;
+    .stat-box h3.counter {
+        display: block;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
     }
     
     .stat-box p {
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        margin-top: 0.5rem !important;
+        display: block;
+        margin: 0;
+        padding: 0;
+        margin-top: 0.5rem;
     }
 `;
 document.head.appendChild(style);
