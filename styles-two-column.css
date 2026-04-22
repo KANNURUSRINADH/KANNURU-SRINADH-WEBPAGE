@@ -2153,29 +2153,6 @@ html {
     margin: 0 0 1.5rem 0;
     padding: 1rem 1.2rem;
     background: #f8f9fa;
-    border-left: 4px solid var(--navy-blue);
-    border-radius: 5px;
-}
-
-/* Responsive for Education and Metrics */
-@media (max-width: 1024px) {
-    .education-timeline,
-    .publication-metrics {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .education-timeline,
-    .publication-metrics {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* Publication Links */
-.publication-link {
-    color: var(--navy-blue);
     text-decoration: none;
     transition: all 0.3s;
     border-bottom: 2px solid transparent;
