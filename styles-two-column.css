@@ -368,6 +368,48 @@ html {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+/* Brand-specific hover effects */
+.identity-orcid:hover {
+    background: #f0fff0 !important;
+    border-color: #a6ce39 !important;
+    box-shadow: 0 8px 25px rgba(166, 206, 57, 0.2) !important;
+}
+
+.identity-orcid:hover h5 {
+    color: #a6ce39;
+}
+
+.identity-scholar:hover {
+    background: #f0f7ff !important;
+    border-color: #4285f4 !important;
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.2) !important;
+}
+
+.identity-scholar:hover h5 {
+    color: #4285f4;
+}
+
+.identity-linkedin:hover {
+    background: #f0f7ff !important;
+    border-color: #0077b5 !important;
+    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.2) !important;
+}
+
+.identity-linkedin:hover h5 {
+    color: #0077b5;
+}
+
+.identity-github:hover {
+    background: #f5f5f5 !important;
+    border-color: #333 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.identity-github:hover h5 {
+    color: #333;
 }
 
 /* RIGHT CONTENT */
