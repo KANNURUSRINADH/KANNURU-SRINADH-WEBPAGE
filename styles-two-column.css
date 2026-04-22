@@ -1222,25 +1222,27 @@ footer p:first-child {
 
     .academic-identity {
         display: flex !important;
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
         justify-content: space-between !important;
-        gap: 5px !important;
-        padding: 0.5rem !important;
+        gap: 3px !important;
+        padding: 0.4rem !important;
     }
 
     .identity-item {
-        flex: 1 !important;
-        padding: 0.4rem 2px !important;
+        flex: 1 1 0 !important;
+        width: 24% !important;
+        padding: 0.3rem 1px !important;
         min-width: 0 !important;
     }
 
     .identity-icon {
-        width: 24px !important;
-        height: 24px !important;
+        width: 20px !important;
+        height: 20px !important;
     }
 
     .identity-item h5 {
-        font-size: 0.5rem !important;
+        font-size: 0.4rem !important;
         white-space: nowrap !important;
     }
 
