@@ -320,9 +320,9 @@ html {
 /* Academic Identity Grid */
 .academic-identity {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1.5rem !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    padding: 1rem !important;
 }
 
 .identity-item {
@@ -330,25 +330,25 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.8rem 0.4rem;
     background: #f8f9fa;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .identity-item:hover {
     background: white;
     border-color: var(--gold);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .identity-icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 0.5rem;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,12 +361,13 @@ html {
 }
 
 .identity-item h5 {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--text-dark);
     margin: 0;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* RIGHT CONTENT */
