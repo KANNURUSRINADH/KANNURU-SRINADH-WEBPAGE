@@ -103,12 +103,13 @@ html {
 
 .nav-time {
     font-weight: 600;
-    font-size: 0.95rem; /* Slightly smaller to fit better */
+    font-size: 0.95rem;
     color: white;
     letter-spacing: 0.05rem;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    display: block; /* Stack time and date */
+    display: block;
+    white-space: nowrap; /* Direct fix for time wrapping */
 }
 
 .nav-date {
