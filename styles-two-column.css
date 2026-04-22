@@ -1155,16 +1155,24 @@ footer p:first-child {
     }
 }
 
-/* Forced Desktop Layout for ALL Devices */
+/* Forced Desktop Layout for ALL Devices - Stability Fix */
 @media (max-width: 1024px) {
     .two-column-layout {
         display: grid !important;
-        grid-template-columns: 280px 1fr !important; /* Always two columns */
-        gap: 20px !important;
+        grid-template-columns: 35% 65% !important; /* Force percentage ratio */
+        gap: 15px !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
     }
     
     .sidebar-left {
-        width: 280px !important;
+        width: 100% !important; /* Let it fill its 35% container */
+        min-width: 130px !important; /* Absolute minimum for readability */
+    }
+
+    .main-content {
+        width: 100% !important;
+        overflow-x: auto !important; /* Prevent right content from pushing sidebar */
     }
 
     .nav-menu {
@@ -1189,27 +1197,38 @@ footer p:first-child {
 
     .stats-row {
         grid-template-columns: repeat(6, 1fr) !important;
-        gap: 0.3rem !important;
+        gap: 2px !important;
+        width: 100% !important;
+    }
+
+    .stat-box {
+        padding: 0.4rem 2px !important;
+        min-height: 50px !important;
+    }
+
+    .stat-box h3 {
+        font-size: 0.8rem !important;
+    }
+
+    .stat-box p {
+        font-size: 0.35rem !important;
+        letter-spacing: 0 !important;
     }
 
     .academic-identity {
         grid-template-columns: repeat(4, 1fr) !important;
-        gap: 0.3rem !important;
+        gap: 0.2rem !important;
         padding: 0.4rem !important;
     }
 
-    .identity-item {
-        padding: 0.4rem 0.2rem !important;
-    }
-
     .identity-icon {
-        width: 26px !important;
-        height: 26px !important;
+        width: 22px !important;
+        height: 22px !important;
     }
 
     .sidebar-box {
-        padding: 1rem !important;
-        margin-bottom: 1rem !important;
+        padding: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
     }
 
     .sidebar-box p {
@@ -1225,70 +1244,27 @@ footer p:first-child {
 
 @media (max-width: 480px) {
     .two-column-layout {
-        grid-template-columns: 160px 1fr !important; /* Slightly wider sidebar for readability */
-        gap: 8px !important;
+        grid-template-columns: 35% 65% !important;
+        gap: 6px !important;
     }
     
     .sidebar-left {
-        width: 160px !important;
-    }
-
-    .sidebar-box {
-        padding: 0.8rem !important;
+        width: 100% !important;
+        min-width: 120px !important;
     }
 
     .sidebar-box p {
-        font-size: 0.7rem !important;
-        line-height: 1.3 !important;
+        font-size: 0.65rem !important;
     }
 
-    .identity-icon {
-        width: 24px !important;
-        height: 24px !important;
-    }
-
-    .identity-item h5 {
-        font-size: 0.45rem !important;
-    }
-
-    .stat-box h3 {
-        font-size: 0.85rem !important;
-    }
-    
-    .stat-box p {
-        font-size: 0.35rem !important;
-    }
-    
     .header-left h1 {
-        font-size: 1.4rem !important;
+        font-size: 1.2rem !important;
     }
     
     .hindi-name {
-        font-size: 0.9rem !important;
+        font-size: 0.8rem !important;
     }
 }
-
-@media (max-width: 480px) {
-    .container-wide {
-        padding: 0 15px;
-    }
-    
-    .header-left h1 {
-        font-size: 1.6rem;
-    }
-    
-    .hindi-name {
-        font-size: 1rem;
-    }
-    
-    .designation {
-        font-size: 1rem;
-    }
-    
-    .stats-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
-    }
     
     .stat-box h3 {
         font-size: 1.5rem;
