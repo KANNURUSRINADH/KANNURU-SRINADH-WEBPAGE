@@ -1155,190 +1155,88 @@ footer p:first-child {
     }
 }
 
+/* Forced Desktop Layout for Mobile */
 @media (max-width: 768px) {
-    body {
-        padding-top: 60px;
+    .two-column-layout {
+        display: grid;
+        grid-template-columns: 300px 1fr; /* Maintain two columns but slightly narrower sidebar */
+        gap: 20px;
     }
     
-    .nav-toggle {
-        display: block;
+    .sidebar-left {
+        width: 300px;
     }
-    
-    .nav-logo {
-        font-size: 1.1rem;
-    }
-    
-    .nav-datetime {
-        position: static;
-        transform: none !important;
-        margin: 0.5rem auto;
-        text-align: center;
-        order: -1;
-        width: auto;
-        display: inline-block;
-        padding: 0.6rem 1rem;
-    }
-    
-    .nav-datetime:hover {
-        transform: scale(1.05) !important;
-    }
-    
-    .nav-time {
-        font-size: 1.3rem;
-        letter-spacing: 0.2rem;
-    }
-    
-    .nav-date {
-        font-size: 0.55rem;
-        letter-spacing: 0.1rem;
-    }
-    
-    .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 0;
-    }
-    
-    .nav-datetime {
-        display: none; /* Hide clock on mobile to avoid clutter */
-    }
-    
+
     .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(0, 26, 51, 0.98);
-        flex-direction: column;
-        padding: 2rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s;
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        padding: 0 !important;
     }
-    
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+
+    .nav-toggle {
+        display: none !important;
     }
-    
-    .content-header {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
+
+    .nav-datetime {
+        display: flex !important; /* Keep clock visible */
     }
-    
-    .header-left h1 {
-        font-size: 2rem;
-    }
-    
-    .hindi-name {
-        font-size: 1.2rem;
-    }
-    
-    .qr-code-image {
-        width: 150px;
-        height: 150px;
-        margin: 1rem auto 0;
-    }
-    
+
     .stats-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
+        grid-template-columns: repeat(6, 1fr) !important;
+        gap: 0.4rem !important;
     }
-    
-    .stat-box {
-        padding: 1rem;
-        min-height: auto;
+
+    .academic-identity {
+        grid-template-columns: repeat(4, 1fr) !important;
     }
-    
+
     .stat-box h3 {
-        font-size: 1.8rem;
+        font-size: 1.2rem !important;
     }
 
     .stat-box p {
-        font-size: 0.65rem;
+        font-size: 0.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .two-column-layout {
+        grid-template-columns: 150px 1fr; /* Even narrower for very small screens */
+        gap: 10px;
     }
     
-    .academic-identity {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-        padding: 1rem;
+    .sidebar-left {
+        width: 150px;
     }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
+
+    .nav-logo {
+        font-size: 0.9rem;
     }
-    
-    .skills-icon-row {
-        gap: 1.5rem;
+
+    .nav-menu a {
+        font-size: 0.7rem;
+        margin: 0 5px;
     }
-    
-    .skill-icon-item {
-        width: 75px;
-        height: 75px;
-        padding: 12px;
+
+    .nav-time {
+        font-size: 0.8rem;
     }
-    
-    .edu-item {
-        padding-left: 60px;
+
+    .nav-date {
+        font-size: 0.4rem;
     }
-    
-    .edu-timeline-dot {
-        left: 8px;
-        width: 32px;
-        height: 32px;
+
+    .stats-row {
+        gap: 2px !important;
     }
-    
-    .education-timeline-vertical::before {
-        left: 24px;
-    }
-    
-    .edu-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-    }
-    
-    .edu-degree-title {
-        font-size: 1.1rem;
-    }
-    
-    .edu-info-row {
-        grid-template-columns: 80px 1fr;
-        gap: 1rem;
-    }
-    
-    .edu-logo {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .edu-grade-section {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 1rem;
-    }
-    
-    .edu-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .edu-grade-circle {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .grade-value {
-        font-size: 1.4rem;
-    }
-    
-    .ref-detail {
-        grid-template-columns: 100px 1fr;
-        gap: 0.8rem;
+
+    .stat-box h3 {
+        font-size: 0.9rem !important;
     }
 }
 
