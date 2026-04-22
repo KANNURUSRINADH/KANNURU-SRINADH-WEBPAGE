@@ -1244,16 +1244,21 @@ footer p:first-child {
     }
     
     .stats-row {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
     
     .stat-box {
-        padding: 1.5rem 1rem;
+        padding: 1rem;
+        min-height: auto;
     }
     
     .stat-box h3 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+    }
+
+    .stat-box p {
+        font-size: 0.65rem;
     }
     
     .academic-identity {
@@ -1354,16 +1359,18 @@ footer p:first-child {
         font-size: 1rem;
     }
     
-    .stat-box h3 {
-        font-size: 2rem;
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
     }
     
-    .stat-box p {
-        font-size: 0.75rem;
+    .stat-box h3 {
+        font-size: 1.5rem;
     }
     
     .academic-identity {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
     }
     
     .identity-icon {
