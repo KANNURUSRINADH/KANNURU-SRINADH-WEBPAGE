@@ -2233,65 +2233,85 @@ html {
 }
 
 .cert-card {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 12px;
-    padding: 1.5rem;
+    background: white;
+    border: 1px solid #edf2f7;
+    border-left: 4px solid #1a365d; /* Reference image blue accent */
+    border-radius: 10px;
+    padding: 1.25rem;
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
     transition: all 0.3s ease;
-    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    position: relative;
 }
 
 .cert-card:hover {
     transform: translateY(-5px);
-    background: white;
-    border-color: var(--gold);
-    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.08);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    border-left-color: var(--gold);
 }
 
 .cert-icon {
-    font-size: 2rem;
-    color: var(--gold);
-    background: white;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    background: #f7fafc;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    color: var(--navy-blue);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.cert-info {
+    flex-grow: 1;
 }
 
 .cert-info h4 {
-    color: var(--navy-blue);
+    color: #1a365d;
     font-size: 1rem;
     margin-bottom: 0.3rem;
-    line-height: 1.3;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
-.cert-info p {
+.cert-meta {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #4a5568;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.cert-id {
+    font-size: 0.75rem;
+    color: #718096;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
     margin-bottom: 0.8rem;
+    font-family: 'Monaco', 'Consolas', monospace;
+    border: 1px solid #e2e8f0;
 }
 
 .btn-cert {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--navy-blue);
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: #1a365d;
+    color: white !important;
     text-decoration: none;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.2s;
+    gap: 0.5rem;
 }
 
 .btn-cert:hover {
     background: var(--gold);
-    color: var(--navy-blue);
-    transform: scale(1.05);
+    color: #1a365d !important;
 }
 
 /* Mobile responsive for Certs */
