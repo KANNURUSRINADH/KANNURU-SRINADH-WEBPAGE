@@ -113,13 +113,19 @@ function toggleAccordion(header) {
     const isActive = accordionItem.classList.contains('active');
     
     if (isActive) {
-        // Just close this one
-        accordionItem.classList.remove('active');
         content.style.maxHeight = '0';
+        accordionItem.classList.remove('active');
     } else {
-        // Just open this one, don't touch others
-        accordionItem.classList.add('active');
+        // Set to scrollHeight for animation, then to none after transition for sticky headers
         content.style.maxHeight = content.scrollHeight + 'px';
+        accordionItem.classList.add('active');
+        
+        // After the transition (0.5s as per CSS), set to none to allow full content flexibility
+        setTimeout(() => {
+            if (accordionItem.classList.contains('active')) {
+                content.style.maxHeight = 'none';
+            }
+        }, 500);
     }
 }
 

@@ -639,38 +639,39 @@ html {
 
 .accordion-item {
     background: white;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    border: 2px solid #e9ecef;
-    overflow: hidden;
-    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: visible; /* Changed from hidden to allow sticky headers */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-.accordion-item:hover {
-    border-color: var(--gold);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.accordion-item.active {
+    border-color: var(--navy-blue);
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
+    transform: translateY(-2px);
 }
 
 .accordion-header {
     background: white;
-    padding: 1.5rem;
+    padding: 1.2rem 1.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    position: relative;
+    gap: 1.2rem;
+    position: sticky; /* Modern Sticky Header */
+    top: 70px; /* Just below the navbar */
+    z-index: 100;
     transition: all 0.3s ease;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid #f1f5f9;
+    border-radius: 12px 12px 0 0;
 }
 
-.accordion-header:hover {
-    background: #f8f9fa;
-    border-bottom-color: var(--gold);
-}
-
-.accordion-header.active {
-    background: #f8f9fa;
-    border-bottom-color: var(--navy-blue);
+.accordion-item.active .accordion-header {
+    background: #f8fafc;
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .accordion-header i {
@@ -727,15 +728,16 @@ html {
 }
 
 .accordion-content {
-    padding: 0;
+    padding: 0 1.5rem;
     max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
+    overflow: hidden; /* Keep hidden for the transition */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
 }
 
-.accordion-content.active {
+.accordion-item.active .accordion-content {
     padding: 1.5rem;
-    max-height: 5000px;
+    max-height: none; /* Changed for modern multi-expand */
 }
 
 .accordion-content p {
