@@ -112,24 +112,14 @@ function toggleAccordion(header) {
     const content = accordionItem.querySelector('.accordion-content');
     const isActive = accordionItem.classList.contains('active');
     
-    // Toggle current accordion item
     if (isActive) {
+        // Just close this one
         accordionItem.classList.remove('active');
         content.style.maxHeight = '0';
     } else {
+        // Just open this one, don't touch others
         accordionItem.classList.add('active');
         content.style.maxHeight = content.scrollHeight + 'px';
-        
-        // Optional: Smoothly scroll to the header if it's not fully in view
-        setTimeout(() => {
-            const rect = header.getBoundingClientRect();
-            if (rect.top < 70) { // 70 is navbar height
-                window.scrollBy({
-                    top: rect.top - 80,
-                    behavior: 'smooth'
-                });
-            }
-        }, 300);
     }
 }
 
@@ -216,28 +206,6 @@ backToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
-
-// 3. Animate Skills Progress Bars on Scroll
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const progressBars = entry.target.querySelectorAll('.skill-progress');
-            progressBars.forEach(bar => {
-                const progress = bar.getAttribute('data-progress');
-                bar.style.setProperty('--progress-width', progress + '%');
-                setTimeout(() => {
-                    bar.style.width = progress + '%';
-                }, 100);
-            });
-            skillsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.3 });
-
-const skillsSection = document.querySelector('.skills-horizontal');
-if (skillsSection) {
-    skillsObserver.observe(skillsSection);
-}
 
 // 4. Scroll Reveal Animation for Elements
 const revealElements = document.querySelectorAll('.sidebar-box, .content-header, .scholar-box');
