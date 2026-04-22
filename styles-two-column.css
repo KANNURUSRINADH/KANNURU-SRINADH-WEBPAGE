@@ -1155,22 +1155,22 @@ footer p:first-child {
     }
 }
 
-/* Forced Desktop Layout for ALL Devices - Final Strict Desktop Alignment */
+/* Forced Desktop Layout for ALL Devices - Widened Sidebar Fix */
 @media (max-width: 1024px) {
     .two-column-layout {
         display: grid !important;
-        grid-template-columns: 120px 1fr !important; /* Narrower sidebar to favor stats visibility */
-        gap: 10px !important;
+        grid-template-columns: 180px 1fr !important; /* Widened for better photo visibility */
+        gap: 8px !important;
         width: 100% !important;
     }
     
     .sidebar-left {
-        width: 120px !important;
-        min-width: 120px !important;
+        width: 180px !important;
+        min-width: 180px !important;
     }
 
     .main-content {
-        width: calc(100% - 130px) !important;
+        width: calc(100% - 188px) !important;
         overflow: visible !important;
     }
 
@@ -1198,34 +1198,34 @@ footer p:first-child {
         display: flex !important;
         flex-wrap: nowrap !important;
         justify-content: space-between !important;
-        gap: 2px !important;
+        gap: 1px !important; /* Minimal gap */
         width: 100% !important;
-        margin-bottom: 1.5rem !important;
     }
 
     .stat-box {
         flex: 1 !important;
-        padding: 0.3rem 1px !important;
-        min-width: 0 !important; /* Allow shrinking below content size */
-        min-height: 45px !important;
+        padding: 0.2rem 1px !important;
+        min-width: 0 !important;
+        min-height: 40px !important;
     }
 
     .stat-box h3 {
-        font-size: 0.8rem !important; /* Ultra-compact for 6 columns */
+        font-size: 0.75rem !important; /* Shrunk for wide sidebar */
+        font-family: 'Arial Narrow', sans-serif; /* Condensed feel */
     }
 
     .stat-box p {
-        font-size: 0.3rem !important;
-        white-space: nowrap !important;
-        transform: scale(0.9);
+        font-size: 0.28rem !important;
+        line-height: 1 !important;
     }
 
     .academic-identity {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        gap: 2px !important;
-        padding: 0.2rem !important;
+        gap: 1px !important;
+    }
+
+    .identity-icon {
+        width: 18px !important;
+        height: 18px !important;
     }
 
     .identity-item {
