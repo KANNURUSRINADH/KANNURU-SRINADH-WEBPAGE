@@ -1945,14 +1945,15 @@ html {
     width: 95px;
     height: 95px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--navy-blue), var(--navy-light));
+    background: linear-gradient(135deg, var(--gold), #ffc107); /* Vibrant Gold */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 184, 28, 0.2); /* Soft gold shadow */
     transition: all 0.3s;
     position: relative;
     padding: 0.5rem;
+    border: 3px solid white;
 }
 
 .edu-grade-circle::before {
@@ -1973,7 +1974,7 @@ html {
 
 .circle-content {
     text-align: center;
-    color: white;
+    color: var(--navy-blue); /* High contrast dark text on gold */
     display: flex;
     flex-direction: column;
     align-items: center;
