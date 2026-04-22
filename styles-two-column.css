@@ -1217,16 +1217,7 @@ footer p:first-child {
     .stat-box p {
         font-size: 0.55rem !important;
         line-height: 1.2 !important;
-        transform: none !important;
-    }
-
-    .academic-identity {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        gap: 3px !important;
-        padding: 0.4rem !important;
+        font-size: 0.5rem !important;
     }
 
     .identity-item {
