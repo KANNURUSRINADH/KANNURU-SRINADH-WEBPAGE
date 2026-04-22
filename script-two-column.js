@@ -112,17 +112,6 @@ function toggleAccordion(header) {
     const content = accordionItem.querySelector('.accordion-content');
     const isActive = accordionItem.classList.contains('active');
     
-    // Close all other accordion items
-    document.querySelectorAll('.accordion-item').forEach(item => {
-        if (item !== accordionItem) {
-            item.classList.remove('active');
-            const otherContent = item.querySelector('.accordion-content');
-            if (otherContent) {
-                otherContent.style.maxHeight = '0';
-            }
-        }
-    });
-    
     // Toggle current accordion item
     if (isActive) {
         accordionItem.classList.remove('active');
@@ -130,6 +119,17 @@ function toggleAccordion(header) {
     } else {
         accordionItem.classList.add('active');
         content.style.maxHeight = content.scrollHeight + 'px';
+        
+        // Optional: Smoothly scroll to the header if it's not fully in view
+        setTimeout(() => {
+            const rect = header.getBoundingClientRect();
+            if (rect.top < 70) { // 70 is navbar height
+                window.scrollBy({
+                    top: rect.top - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }, 300);
     }
 }
 
