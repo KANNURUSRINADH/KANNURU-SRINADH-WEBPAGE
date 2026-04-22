@@ -1155,23 +1155,22 @@ footer p:first-child {
     }
 }
 
-/* Forced Desktop Layout for ALL Devices - Widened Sidebar Fix */
+/* Balanced Two-Column Mobile Layout */
 @media (max-width: 1024px) {
     .two-column-layout {
         display: grid !important;
-        grid-template-columns: 180px 1fr !important; /* Widened for better photo visibility */
-        gap: 8px !important;
+        grid-template-columns: 200px 1fr !important; /* Wide sidebar for "Best View" */
+        gap: 15px !important;
         width: 100% !important;
     }
     
     .sidebar-left {
-        width: 180px !important;
-        min-width: 180px !important;
+        width: 200px !important;
+        min-width: 200px !important;
     }
 
     .main-content {
-        width: calc(100% - 188px) !important;
-        overflow: visible !important;
+        width: calc(100% - 215px) !important;
     }
 
     .nav-menu {
@@ -1195,92 +1194,85 @@ footer p:first-child {
     }
 
     .stats-row {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        gap: 1px !important; /* Minimal gap */
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* 3x2 Grid */
+        gap: 8px !important;
         width: 100% !important;
+        margin-bottom: 1.5rem !important;
     }
 
     .stat-box {
-        flex: 1 !important;
-        padding: 0.2rem 1px !important;
-        min-width: 0 !important;
-        min-height: 40px !important;
+        padding: 0.8rem 0.4rem !important;
+        min-height: 80px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
     }
 
     .stat-box h3 {
-        font-size: 0.75rem !important; /* Shrunk for wide sidebar */
-        font-family: 'Arial Narrow', sans-serif; /* Condensed feel */
+        font-size: 1.4rem !important; /* Larger, readable fonts */
+        font-family: inherit !important;
     }
 
     .stat-box p {
-        font-size: 0.28rem !important;
-        line-height: 1 !important;
+        font-size: 0.55rem !important;
+        line-height: 1.2 !important;
+        transform: none !important;
     }
 
     .academic-identity {
-        gap: 1px !important;
-    }
-
-    .identity-icon {
-        width: 18px !important;
-        height: 18px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2x2 Grid */
+        gap: 8px !important;
+        padding: 0.5rem !important;
     }
 
     .identity-item {
-        flex: 1 !important;
-        padding: 0.2rem 1px !important;
-        min-width: 0 !important;
+        padding: 0.8rem 0.4rem !important;
     }
 
     .identity-icon {
-        width: 20px !important;
-        height: 20px !important;
+        width: 32px !important;
+        height: 32px !important;
     }
 
     .identity-item h5 {
-        font-size: 0.4rem !important;
-        white-space: nowrap !important;
+        font-size: 0.6rem !important;
     }
 
     .sidebar-box {
-        padding: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .sidebar-box p {
-        font-size: 0.65rem !important;
-        line-height: 1.2 !important;
+        font-size: 0.8rem !important;
+        line-height: 1.5 !important;
     }
 
     .sidebar-box h3 {
-        font-size: 0.6rem !important;
-        margin-bottom: 0.3rem !important;
+        font-size: 0.75rem !important;
+        margin-bottom: 0.6rem !important;
     }
 }
 
 @media (max-width: 480px) {
-    .header-left h1 {
-        font-size: 1.1rem !important;
+    .two-column-layout {
+        grid-template-columns: 140px 1fr !important; /* Scale back slightly for tiny phones */
+        gap: 10px !important;
     }
     
-    .designation {
-        font-size: 0.7rem !important;
+    .sidebar-left {
+        width: 140px !important;
+        min-width: 140px !important;
     }
 
-    .department {
-        font-size: 0.6rem !important;
+    .main-content {
+        width: calc(100% - 150px) !important;
     }
 
-    .btn-biosketch {
-        padding: 0.4rem 0.8rem !important;
-        font-size: 0.7rem !important;
-    }
-
-    .qr-code-image {
-        width: 80px !important;
-        height: 80px !important;
+    .stat-box h3 {
+        font-size: 1.1rem !important;
     }
 }
     
