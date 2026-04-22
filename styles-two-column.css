@@ -1155,24 +1155,23 @@ footer p:first-child {
     }
 }
 
-/* Forced Desktop Layout for ALL Devices - Stability Fix */
+/* Forced Desktop Layout for ALL Devices - Final Strict Desktop Alignment */
 @media (max-width: 1024px) {
     .two-column-layout {
         display: grid !important;
-        grid-template-columns: 35% 65% !important; /* Force percentage ratio */
-        gap: 15px !important;
+        grid-template-columns: 120px 1fr !important; /* Narrower sidebar to favor stats visibility */
+        gap: 10px !important;
         width: 100% !important;
-        overflow-x: hidden !important;
     }
     
     .sidebar-left {
-        width: 100% !important; /* Let it fill its 35% container */
-        min-width: 130px !important; /* Absolute minimum for readability */
+        width: 120px !important;
+        min-width: 120px !important;
     }
 
     .main-content {
-        width: 100% !important;
-        overflow-x: auto !important; /* Prevent right content from pushing sidebar */
+        width: calc(100% - 130px) !important;
+        overflow: visible !important;
     }
 
     .nav-menu {
@@ -1196,73 +1195,92 @@ footer p:first-child {
     }
 
     .stats-row {
-        grid-template-columns: repeat(6, 1fr) !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
         gap: 2px !important;
         width: 100% !important;
+        margin-bottom: 1.5rem !important;
     }
 
     .stat-box {
-        padding: 0.4rem 2px !important;
-        min-height: 50px !important;
+        flex: 1 !important;
+        padding: 0.3rem 1px !important;
+        min-width: 0 !important; /* Allow shrinking below content size */
+        min-height: 45px !important;
     }
 
     .stat-box h3 {
-        font-size: 0.8rem !important;
+        font-size: 0.8rem !important; /* Ultra-compact for 6 columns */
     }
 
     .stat-box p {
-        font-size: 0.35rem !important;
-        letter-spacing: 0 !important;
+        font-size: 0.3rem !important;
+        white-space: nowrap !important;
+        transform: scale(0.9);
     }
 
     .academic-identity {
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 0.2rem !important;
-        padding: 0.4rem !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        gap: 2px !important;
+        padding: 0.2rem !important;
+    }
+
+    .identity-item {
+        flex: 1 !important;
+        padding: 0.2rem 1px !important;
+        min-width: 0 !important;
     }
 
     .identity-icon {
-        width: 22px !important;
-        height: 22px !important;
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .identity-item h5 {
+        font-size: 0.4rem !important;
+        white-space: nowrap !important;
     }
 
     .sidebar-box {
-        padding: 0.8rem !important;
-        margin-bottom: 0.8rem !important;
-    }
-
-    .sidebar-box p {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
-    }
-
-    .sidebar-box h3 {
-        font-size: 0.7rem !important;
+        padding: 0.5rem !important;
         margin-bottom: 0.5rem !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .two-column-layout {
-        grid-template-columns: 35% 65% !important;
-        gap: 6px !important;
-    }
-    
-    .sidebar-left {
-        width: 100% !important;
-        min-width: 120px !important;
     }
 
     .sidebar-box p {
         font-size: 0.65rem !important;
+        line-height: 1.2 !important;
     }
 
+    .sidebar-box h3 {
+        font-size: 0.6rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+}
+
+@media (max-width: 480px) {
     .header-left h1 {
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
     }
     
-    .hindi-name {
-        font-size: 0.8rem !important;
+    .designation {
+        font-size: 0.7rem !important;
+    }
+
+    .department {
+        font-size: 0.6rem !important;
+    }
+
+    .btn-biosketch {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    .qr-code-image {
+        width: 80px !important;
+        height: 80px !important;
     }
 }
     
