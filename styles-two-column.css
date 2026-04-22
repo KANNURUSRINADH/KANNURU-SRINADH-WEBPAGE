@@ -1966,12 +1966,9 @@ html {
     transition: opacity 0.3s;
 }
 
-.edu-item:hover .edu-grade-circle::before {
-    opacity: 1;
-}
-
+/* Removed hover effects for Grade Circle */
 .edu-item:hover .edu-grade-circle {
-    transform: scale(1.1) rotate(360deg);
+    transform: none;
 }
 
 .circle-content {
