@@ -76,11 +76,15 @@ html {
     flex: 0 0 auto;
 }
 
+.nav-datetime-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: 0.5rem;
+}
+
 .nav-datetime {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     background: none !important;
@@ -89,7 +93,7 @@ html {
     backdrop-filter: none !important;
     padding: 0;
     margin: 0;
-    z-index: 10;
+    line-height: 1.1;
 }
 
 .nav-datetime:hover {
