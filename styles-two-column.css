@@ -2216,3 +2216,32 @@ html {
     color: var(--navy-blue);
     transform: translateX(3px);
 }
+
+
+/* Interest List Styling */
+.interest-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+.interest-list li {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    transition: all 0.3s ease !important;
+    color: var(--text-dark) !important;
+}
+
+.interest-list li:hover {
+    transform: translateX(5px) !important;
+    color: var(--navy-blue) !important;
+}
+
+.interest-list li i {
+    color: var(--gold) !important;
+    font-size: 1rem !important;
+    width: 20px !important;
+    text-align: center !important;
+}
