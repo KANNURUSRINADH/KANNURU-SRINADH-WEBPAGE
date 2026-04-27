@@ -813,6 +813,8 @@ html {
 
 .badge-green { background: var(--green); }
 .badge-blue { background: var(--blue); }
+.badge-purple { background: var(--purple); }
+.badge-teal { background: #20c997; }
 
 /* Skills Icon Row Layout */
 .skills-icon-row {
