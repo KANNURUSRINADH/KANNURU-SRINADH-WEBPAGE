@@ -650,6 +650,113 @@ html {
 .badge-purple { background: var(--purple); }
 .badge-teal { background: #20c997; }
 
+/* Skills Icon Row Layout */
+.skills-icon-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+}
+
+.skill-icon-item {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 3px solid #e9ecef;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+}
+
+.skill-icon-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.skill-icon-item:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Course Styling */
+.courses-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.course-column h4 {
+    color: var(--navy-blue);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* Certification Grid Styling */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.cert-card {
+    background: white;
+    border: 1px solid #edf2f7;
+    border-left: 4px solid #1a365d;
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    border-left-color: var(--gold);
+}
+
+.cert-icon {
+    width: 50px;
+    height: 50px;
+    background: #f7fafc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy-blue);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.btn-cert {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: #1a365d;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    gap: 0.5rem;
+}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--navy-blue), #001a33);
@@ -699,6 +806,13 @@ footer {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.5rem !important;
     }
+    .contact-info-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+    }
+    .courses-two-column { grid-template-columns: 1fr !important; }
+    .cert-grid { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 480px) {
