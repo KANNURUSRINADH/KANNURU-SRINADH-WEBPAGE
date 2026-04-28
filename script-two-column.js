@@ -377,7 +377,176 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Animations and effects are now handled in styles-two-column.css
+// 14. Add CSS for Ripple Effect and Stat Box Fix
+const style = document.createElement('style');
+style.textContent = `
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
+    }
+    
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+    
+    .btn-biosketch, .back-to-top {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Minimal fix for text separation without breaking hover effects */
+    .stat-box h3.counter {
+        display: block;
+        line-height: 1;
+    }
+    
+    .stat-box p {
+        display: block;
+        margin-top: 0.5rem;
+    }
+    
+    /* Reduce width and improve spacing for better visual balance */
+    .stats-row {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2.2rem;
+        margin-bottom: 2rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 1.5rem;
+    }
+    
+    .stat-box {
+        padding: 1.2rem 1rem;
+        min-width: 160px;
+        max-width: 180px;
+        margin: 0 auto;
+    }
+    
+    /* Keep exact desktop layout for all devices */
+    @media (max-width: 1024px) {
+        .stats-row {
+            grid-template-columns: repeat(6, 1fr) !important;
+            gap: 2.2rem !important;
+            max-width: 1200px !important;
+            margin: 2rem auto !important;
+            padding: 0 1.5rem !important;
+        }
+        
+        .stat-box {
+            min-width: 160px !important;
+            max-width: 180px !important;
+            padding: 1.2rem 1rem !important;
+        }
+        
+        .stat-box h3 {
+            font-size: 3rem !important;
+        }
+        
+        .stat-box p {
+            font-size: 0.85rem !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .stats-row {
+            grid-template-columns: repeat(6, 1fr) !important;
+            gap: 2.2rem !important;
+            max-width: 1200px !important;
+            padding: 0 1.5rem !important;
+            margin: 2rem auto !important;
+            display: grid !important;
+            overflow-x: auto !important;
+        }
+        
+        .stat-box {
+            min-width: 160px !important;
+            max-width: 180px !important;
+            padding: 1.2rem 1rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .stat-box h3 {
+            font-size: 3rem !important;
+        }
+        
+        .stat-box p {
+            font-size: 0.85rem !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .stats-row {
+            grid-template-columns: repeat(6, 1fr) !important;
+            gap: 2.2rem !important;
+            max-width: 1200px !important;
+            padding: 0 1.5rem !important;
+            margin: 2rem auto !important;
+            overflow-x: auto !important;
+        }
+        
+        .stat-box {
+            min-width: 160px !important;
+            max-width: 180px !important;
+            padding: 1.2rem 1rem !important;
+        }
+        
+        .stat-box h3 {
+            font-size: 3rem !important;
+        }
+        
+        .stat-box p {
+            font-size: 0.85rem !important;
+        }
+    }
+    
+    /* Ensure hover effects work properly */
+    .stat-box {
+        transition: all 0.3s ease;
+    }
+    
+    .stat-box:hover {
+        transform: translateY(-10px) scale(1.08);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        border-radius: 30% 8px 30% 8px;
+    }
+    
+    .stat-box:hover h3 {
+        animation: number-spin 0.8s ease;
+    }
+    
+    @keyframes number-spin {
+        0% { 
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        50% { 
+            transform: rotateX(90deg);
+            opacity: 0;
+        }
+        51% { 
+            transform: rotateX(-90deg);
+            opacity: 0;
+        }
+        100% { 
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+    }
+`;
+document.head.appendChild(style);
+
 console.log('✨ All enhancements loaded successfully!');
 
 
