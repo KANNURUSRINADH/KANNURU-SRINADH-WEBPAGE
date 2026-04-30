@@ -204,7 +204,7 @@ html {
 .sidebar-photo-box {
     position: relative;
     margin-bottom: 1.5rem;
-    height: 330px;
+    height: 450px;
     overflow: hidden;
 }
 
@@ -1128,17 +1128,17 @@ footer p:first-child {
 @media (max-width: 1024px) {
     .two-column-layout {
         display: grid !important;
-        grid-template-columns: 200px 1fr !important; 
+        grid-template-columns: 280px 1fr !important; 
         gap: 15px !important;
     }
     
     .sidebar-left {
-        width: 200px !important;
-        min-width: 200px !important;
+        width: 280px !important;
+        min-width: 280px !important;
     }
 
     .main-content {
-        width: calc(100% - 215px) !important;
+        width: calc(100% - 295px) !important;
     }
 
     /* Stats: 2 Rows (3x2 Grid) */
@@ -1162,28 +1162,25 @@ footer p:first-child {
         font-size: 0.5rem !important;
     }
 
-    /* Identity: Always Single Row */
+    /* Identity: 2x2 Grid on tablets/mobile to prevent overlap */
     .academic-identity {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        gap: 4px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
     }
 
     .identity-item {
-        flex: 1 !important;
-        padding: 0.4rem 2px !important;
-        min-width: 0 !important;
-    }
-
-    .identity-icon {
-        width: 22px !important;
-        height: 22px !important;
+        padding: 0.8rem 5px !important;
+        min-height: 100px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
     .identity-item h5 {
-        font-size: 0.45rem !important;
-        white-space: nowrap !important;
+        font-size: 0.6rem !important;
+        white-space: normal !important;
     }
 
     .nav-toggle {
@@ -1203,16 +1200,16 @@ footer p:first-child {
 
 @media (max-width: 480px) {
     .two-column-layout {
-        grid-template-columns: 160px 1fr !important; 
+        grid-template-columns: 1fr !important; 
     }
     
     .sidebar-left {
-        width: 160px !important;
-        min-width: 160px !important;
+        width: 100% !important;
+        min-width: 100% !important;
     }
 
     .main-content {
-        width: calc(100% - 170px) !important;
+        width: 100% !important;
     }
 
     .stat-box h3 {
